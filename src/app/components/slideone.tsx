@@ -1,6 +1,6 @@
-import { Box, Button, VStack, Image, Text, HStack, SimpleGrid, GridItem } from "@chakra-ui/react";
+import { Box, Button, VStack, Image, Text, HStack, SimpleGrid, GridItem, Link } from "@chakra-ui/react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import Link from "next/link";
+// import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 export default function Slideone({slideone,slidefive}:{slideone:any,slidefive:any}) {
@@ -107,7 +107,7 @@ export default function Slideone({slideone,slidefive}:{slideone:any,slidefive:an
           <SimpleGrid
           columns={[1,2]} rowGap={['24px','']}>
             <GridItem colSpan={[1]}  width={'full'} justifyContent={['center','start']} display={'flex'}>
-            <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
+            <Link variant='unstyled'href={"https://wa.me/message/DMLINAXCGNQYP1"}>
               <Button
                 fontWeight={"700"}
                 fontSize={["12px", "16px"]}

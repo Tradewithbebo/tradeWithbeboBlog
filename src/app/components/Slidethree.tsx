@@ -30,7 +30,7 @@ export default function Slidethree() {
     }}
     initial='hidden'
     animate={mainControls}
-    transition={{duration:0.5,delay:0.25}}>
+    transition={{duration:0.7,delay:0.4}}>
     <Box pt={{ base: "55px", md: "20px", lg: "20px" }}>
       <VStack
         display={"flex"}

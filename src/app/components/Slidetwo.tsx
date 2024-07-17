@@ -30,7 +30,7 @@ export default function Slidetwo() {
     }}
     initial='hidden'
     animate={mainControls}
-    transition={{duration:0.5,delay:0.5}}>
+    transition={{duration:0.7,delay:0.4}}>
     <div id="slide2">
       <Box display={{ base: "none", md: "block", lg: "block" }}>
       <VStack

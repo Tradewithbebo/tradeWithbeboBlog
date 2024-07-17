@@ -47,7 +47,7 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
     }}
     initial='hidden'
     animate={mainControls}
-    transition={{duration:0.5,delay:0.25}}>
+    transition={{duration:0.7,delay:0.4}}>
     <Box height="full" w={"full"} cursor={"pointer"} ref={slidefive}>
       <Box
         overflow={"hidden"}

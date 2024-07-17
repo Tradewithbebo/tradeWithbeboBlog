@@ -33,7 +33,9 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
     console.log("Form data:", formData);
   };
   return (
-    <Box
+    <>
+    <Box display={['none','block']}> 
+      <Box 
       w={"full"}
       display={"flex"}
       justifyContent={"center"}
@@ -45,8 +47,8 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
         w={"full"}
         px={{ lg: "140px", md: "20px", base: "10px" }}
       >
-        <GridItem colSpan={1}>
-          <HStack gap={"1px"} mb={["30px", "50px"]}>
+        <GridItem colSpan={[2,1]}>
+          <HStack gap={"1px"} mb={["12px", "50px"]}>
             <Image
               height="12px"
               width="10px"
@@ -58,8 +60,8 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
               <Image src="/image/beboblack.svg" alt="Bebo" />
             </Box>
           </HStack>
-          <Box mb={{base:"15px", lg:"58px", md: "30px"}}>
-            <Text fontWeight={"600"} fontSize={{base:"10px", lg:"20px", md: "16px"}}>
+          <Box mb={{base:"10px", lg:"58px", md: "30px"}}>
+            <Text fontWeight={"600"} fontSize={{base:"18px", lg:"20px", md: "16px"}}>
               Join our waitlist to be among our first users
             </Text>
           </Box>
@@ -68,7 +70,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
             w={"full"}
             gap={"20px"}
           >
-            <GridItem colSpan={1} w={{base:"80%", lg:"full", md: "80%"}}>
+            <GridItem colSpan={1} w={{base:"100%", lg:"full", md: "80%"}}>
               <FormControl>
                 <Input
                   type="email"
@@ -85,14 +87,14 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
               </FormControl>
             </GridItem>
             <GridItem
-              colSpan={[1, 1]}
+              colSpan={[2, 1]}
               w={"full"}
               display={"flex"}
-              justifyContent={"start"}
+              justifyContent={['center',"start"]}
             >
               <Button
                 onClick={handleSubmit}
-                w={["60%", "50%"]}
+                w={["70%", "50%"]}
                 size={["sm", "md"]}
                 bg={"#0CBF94"}
                 rounded={"20px"}
@@ -104,14 +106,14 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
             </GridItem>
           </SimpleGrid>
         </GridItem>
-        <GridItem colSpan={1} w={"full"} mb={"50px"}>
+        <GridItem colSpan={[2,1]} w={"full"} mb={"50px"} mt={['30px',""]}>
           <VStack w={"full"}>
             <HStack gap="26px" w={"full"}>
               <Box>
                 <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
                   <Text
                     fontWeight={"600"}
-                    fontSize={["9px", "14px"]}
+                    fontSize={["12px", "14px"]}
                     color={"black"}
                   >
                     Sell crypto
@@ -122,7 +124,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
                 <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
                   <Text
                     fontWeight={"600"}
-                    fontSize={["9px", "14px"]}
+                    fontSize={["12px", "14px"]}
                     color={"black"}
                   >
                     Buy crypto
@@ -139,7 +141,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
               >
                 <Text
                   fontWeight={"600"}
-                  fontSize={["9px", "14px"]}
+                  fontSize={["12px", "14px"]}
                   color={"black"}
                 >
                   FAQS
@@ -147,7 +149,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
               </Box>
             </HStack>
             <Box w={"full"}>
-              <Text fontSize={["9px", "14px"]} fontWeight={"300"}>
+              <Text fontSize={["12px", "14px"]} fontWeight={"300"}>
                 At BEBO, we empower you to seamlessly convert your
                 cryptocurrencies into Naira,providing a secure and efficient
                 gateway to navigate the dynamic world of digital assets. Our
@@ -185,7 +187,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
             >
               <HStack  w={"full"}
               justifyContent={"end"} >
-                <Link href={"https://www.instagram.com/tradewithbebo?igsh=eTRkcXl3d3R4bmRo"}>
+                <Link href="https://www.instagram.com/tradewithbebo?igsh=eTRkcXl3d3R4bmRo">
                 <Box border={"1px"} p={"10px"} color={"grey"} rounded={"50%"}>
                   <FiInstagram />
                 </Box>
@@ -206,9 +208,10 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
             >
               <HStack  w={"full"}
               justifyContent={"end"}>
+                <Link href={"https://www.instagram.com/tradewithbebo?igsh=eTRkcXl3d3R4bmRo"}>
                 <Box border={"1px"} p={"5px"} color={"grey"} rounded={"50%"}>
                   <FiInstagram size={'15px'}/>
-                </Box>
+                </Box></Link>
                 <Box border={"1px"} p={"5px"} color={"grey"} rounded={"50%"}>
                   <RiTwitterXFill size={'15px'} />
                 </Box>
@@ -222,5 +225,201 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
         </GridItem>
       </SimpleGrid>
     </Box>
+    </Box><Box display={['block','none']}> 
+      <Box 
+      w={"full"}
+      display={"flex"}
+      justifyContent={"center"}
+      alignContent={"center"}
+      pt={["50px", "100px"]}
+    >
+      <SimpleGrid
+        columns={2}
+        w={"full"}
+        px={{ lg: "140px", md: "20px", base: "20px" }}
+      >
+         <GridItem colSpan={[2,1]} w={"full"} mb={['30px',"50px"]} >
+          <VStack w={"full"}>
+          <HStack gap={"1px"} mb={["10px", "50px"]} w={"full"}>
+            <Image
+              height="15px"
+              width="13px"
+              objectFit="cover"
+              src="/image/logoblack.svg"
+              alt="Bebo"
+            />
+            <Box height="13px" width="39px">
+              <Image src="/image/beboblack.svg" alt="Bebo" />
+            </Box>
+          </HStack>
+            <HStack gap="26px" w={"full"}>
+              <Box>
+                <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
+                  <Text
+                    fontWeight={"600"}
+                    fontSize={["12px", "14px"]}
+                    color={"black"}
+                  >
+                    Sell crypto
+                  </Text>
+                </Link>
+              </Box>
+              <Box>
+                <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
+                  <Text
+                    fontWeight={"600"}
+                    fontSize={["12px", "14px"]}
+                    color={"black"}
+                  >
+                    Buy crypto
+                  </Text>
+                </Link>
+              </Box>
+              <Box
+                cursor={"pointer"}
+                onClick={() => {
+                  slideotwo.current?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                <Text
+                  fontWeight={"600"}
+                  fontSize={["12px", "14px"]}
+                  color={"black"}
+                >
+                  FAQS
+                </Text>
+              </Box>
+            </HStack>
+            <Box w={"full"}>
+              <Text fontSize={["12px", "14px"]} fontWeight={"300"}>
+                At BEBO, we empower you to seamlessly convert your
+                cryptocurrencies into Naira,providing a secure and efficient
+                gateway to navigate the dynamic world of digital assets. Our
+                user-friendly platform ensures a hassle-free experience, making
+                crypto-to-Naira conversions and transactions swift and reliable.
+                Crypto to Naira Exchange: Convert your favorite cryptocurrencies
+                such as Bitcoin, Ethereum, Litecoin, and more into Nigerian
+                Naira quickly and securely. With our competitive exchange rates
+                and transparent fees, you can trust BEBO to handle your
+                conversions efficiently.
+              </Text>
+            </Box>
+          </VStack>
+        </GridItem>
+        <GridItem colSpan={[2,1]}>
+         
+          <Box mb={{base:"10px", lg:"58px", md: "30px"}}>
+            <Text fontWeight={"600"} fontSize={{base:"18px", lg:"20px", md: "16px"}}>
+              Join our waitlist to be among our first users
+            </Text>
+          </Box>
+          <SimpleGrid
+            columns={{ base: 1, lg: 2, md: 1 }}
+            w={"full"}
+            gap={"20px"}
+          >
+            <GridItem colSpan={1} w={{base:"100%", lg:"full", md: "80%"}}>
+              <FormControl>
+                <Input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  //   bg={"#06795D1A"}
+                  rounded={"20px"}
+                  boxShadow="0px -4px 6px rgba(128, 128, 128, 0.2),0px 4px 6px rgba(128, 128, 128, 0.1)"
+                  border={"none"}
+                  size={["sm", "md"]}
+                />
+              </FormControl>
+            </GridItem>
+            <GridItem
+              colSpan={[2, 1]}
+              w={"full"}
+              display={"flex"}
+              justifyContent={['start',"start"]}
+              mb={'20px'}
+            >
+              <Button
+                onClick={handleSubmit}
+                w={["70%", "50%"]}
+                size={["sm", "md"]}
+                bg={"#0CBF94"}
+                rounded={"20px"}
+                boxShadow="0px -4px 6px rgba(128, 128, 128, 0.2),0px 4px 6px rgba(128, 128, 128, 0.1)"
+                border={"none"}
+              >
+                Join waitlist
+              </Button>
+            </GridItem>
+          </SimpleGrid>
+        </GridItem>
+       
+        <GridItem colSpan={2} mb={{base:"10px", lg:"40px", md: "20px"}} w={"full"}>
+          <Divider orientation="horizontal" size={"lg"} />
+        </GridItem>
+        <GridItem colSpan={2} mb={"50px"} w={"full"}>
+          <SimpleGrid columns={2}>
+            <GridItem colSpan={1}>
+              <HStack>
+                <Box>
+                  <AiOutlineCopyrightCircle size={'10px'} />
+                </Box>
+                <Box>
+                  <Text fontSize={'10px'}>2024 Bebo.</Text>
+                </Box>
+              </HStack>
+            </GridItem>
+            <GridItem
+              colSpan={1}
+              w={"full"}
+              justifyContent={"end"}
+              display={['none','block']}
+            >
+              <HStack  w={"full"}
+              justifyContent={"end"} >
+                <Link href="https://www.instagram.com/tradewithbebo?igsh=eTRkcXl3d3R4bmRo">
+                <Box border={"1px"} p={"10px"} color={"grey"} rounded={"50%"}>
+                  <FiInstagram />
+                </Box>
+                </Link>
+                <Box border={"1px"} p={"10px"} color={"grey"} rounded={"50%"}>
+                  <RiTwitterXFill />
+                </Box>
+                <Box border={"1px"} p={"10px"} color={"grey"} rounded={"50%"}>
+                  <LuFacebook />
+                </Box>
+              </HStack>
+              </GridItem>
+              <GridItem
+              colSpan={1}
+              w={"full"}
+              justifyContent={"end"}
+              display={['block','none']}
+            >
+              <HStack  w={"full"}
+              justifyContent={"end"}>
+                 <Link href={"https://www.instagram.com/tradewithbebo?igsh=eTRkcXl3d3R4bmRo"}>
+                <Box border={"1px"} p={"5px"} color={"grey"} rounded={"50%"}>
+                  <FiInstagram size={'15px'}/>
+                </Box></Link>
+                <Box border={"1px"} p={"5px"} color={"grey"} rounded={"50%"}>
+                  <RiTwitterXFill size={'15px'} />
+                </Box>
+                <Box border={"1px"} p={"5px"} color={"grey"} rounded={"50%"}>
+                  <LuFacebook size={'15px'} />
+                </Box>
+              </HStack>
+             
+            </GridItem>
+          </SimpleGrid>
+        </GridItem>
+      </SimpleGrid>
+    </Box>
+    </Box>
+    </>
   );
 }

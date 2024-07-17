@@ -14,7 +14,7 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 
 type Info = {
   title: string;
-  content: string;
+  content: any;
 };
 
 function AccordionItemWithIcon({ title, content }: Info) {
