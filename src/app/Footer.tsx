@@ -292,13 +292,13 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
                 </Text>
               </Box>
             </HStack>
-            <Box w={"full"}>
+            {/* <Box w={"full"}>
               <Text fontSize={["16px", "14px"]} fontWeight={"300"}>
                 At BEBO, we empower you to seamlessly convert your
                 cryptocurrencies into Naira,providing a secure and efficient
                 gateway to navigate the dynamic world of digital assets.
               </Text>
-            </Box>
+            </Box> */}
           </VStack>
         </GridItem>
         <GridItem colSpan={[2,1]}>
@@ -338,7 +338,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
             >
               <Button
                 onClick={handleSubmit}
-                w={["70%", "50%"]}
+                w={["95%", "50%"]}
                 size={["sm", "md"]}
                 bg={"#0CBF94"}
                 rounded={"20px"}
