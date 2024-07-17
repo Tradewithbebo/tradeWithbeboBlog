@@ -257,7 +257,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
                 <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
                   <Text
                     fontWeight={"600"}
-                    fontSize={["12px", "14px"]}
+                    fontSize={["14px", "14px"]}
                     color={"black"}
                   >
                     Sell crypto
@@ -268,7 +268,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
                 <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
                   <Text
                     fontWeight={"600"}
-                    fontSize={["12px", "14px"]}
+                    fontSize={["14px", "14px"]}
                     color={"black"}
                   >
                     Buy crypto
@@ -285,7 +285,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
               >
                 <Text
                   fontWeight={"600"}
-                  fontSize={["12px", "14px"]}
+                  fontSize={["14px", "14px"]}
                   color={"black"}
                 >
                   FAQS
@@ -293,17 +293,10 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
               </Box>
             </HStack>
             <Box w={"full"}>
-              <Text fontSize={["12px", "14px"]} fontWeight={"300"}>
+              <Text fontSize={["16px", "14px"]} fontWeight={"300"}>
                 At BEBO, we empower you to seamlessly convert your
                 cryptocurrencies into Naira,providing a secure and efficient
-                gateway to navigate the dynamic world of digital assets. Our
-                user-friendly platform ensures a hassle-free experience, making
-                crypto-to-Naira conversions and transactions swift and reliable.
-                Crypto to Naira Exchange: Convert your favorite cryptocurrencies
-                such as Bitcoin, Ethereum, Litecoin, and more into Nigerian
-                Naira quickly and securely. With our competitive exchange rates
-                and transparent fees, you can trust BEBO to handle your
-                conversions efficiently.
+                gateway to navigate the dynamic world of digital assets.
               </Text>
             </Box>
           </VStack>

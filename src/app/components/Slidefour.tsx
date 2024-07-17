@@ -89,7 +89,7 @@ export default function Slidefour({ slidetwo }: { slidetwo: any }) {
             <Box width={["70%", "70%"]}>
               <Accordions
                 title={
-                  "What kind of cryptocurrency can I buy and sell on Bebo?"
+                  "What kind of cryptocurrency can I buy and sell on Bebo ?"
                 }
                 content={" BTC, USDT, ETH, SOL "}
               />
