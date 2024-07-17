@@ -80,7 +80,7 @@ export default function Slidefour({ slidetwo }: { slidetwo: any }) {
             </Box>
             <Box width={["70%", "70%"]}>
               <Accordions
-                title={"What does bebo really do"}
+                title={"What does bebo really do ?"}
                 content={
                   "Bebo is a new platform that allows you to easily and securely buy and sell cryptocurrency. "
                 }
@@ -96,7 +96,7 @@ export default function Slidefour({ slidetwo }: { slidetwo: any }) {
             </Box>
             <Box width={["70%", "70%"]}>
               <Accordions
-                title={"How do I sign up for Bebo?"}
+                title={"How do I sign up for Bebo ?"}
                 content={
                   "You can join our waitlist by entering your email address on our landing page."
                 }
@@ -104,7 +104,7 @@ export default function Slidefour({ slidetwo }: { slidetwo: any }) {
             </Box>
             <Box width={["70%", "70%"]}>
               <Accordions
-                title={"When will Bebo be available?"}
+                title={"When will Bebo be available ?"}
                 content={
                   "We are currently in development and will be launching soon. Join our waitlist to be notified when we go live! "
                 }
@@ -112,7 +112,7 @@ export default function Slidefour({ slidetwo }: { slidetwo: any }) {
             </Box>
             <Box width={["70%", "70%"]}>
               <Accordions
-                title={"How do I buy cryptocurrency on Bebo? "}
+                title={"How do I buy cryptocurrency on Bebo ? "}
                 content={
                  <Link _hover={{color:''}}>Until our app is ready you can send your buy request to us via WhatsApp (Insert the link)<span style={{color:"blue",marginLeft:'10px'}}>Click to Trade</span></Link>
                 }
@@ -120,7 +120,7 @@ export default function Slidefour({ slidetwo }: { slidetwo: any }) {
             </Box>
             <Box width={["70%", "70%"]}>
               <Accordions
-                title={"What payment methods do you accept?"}
+                title={"What payment methods do you accept ?"}
                 content={"We accept payments in your local currency."}
               />
             </Box>
