@@ -10,6 +10,7 @@ import {
   Input,
   VStack,
   Divider,
+  useToast,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -17,21 +18,88 @@ import { AiOutlineCopyrightCircle } from "react-icons/ai";
 import { FiInstagram } from "react-icons/fi";
 import { LuFacebook } from "react-icons/lu";
 import { RiTwitterXFill } from "react-icons/ri";
+import { AxiosPost } from "./components/Axios";
 
 export default function Footer({ slideotwo }: { slideotwo: any }) {
   const [formData, setFormData] = useState({ email: "" });
+  const [emailError, setEmailError] = useState("");
+  const toast = useToast()
+  const url = "users/subscribe";
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = (e: any) => {
+  const handleChange = (e:any) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
+
+    // Clear email error when the user starts typing
+    if (name === "email") {
+      setEmailError("");
+    }
   };
 
-  const handleSubmit = () => {
-    console.log("Form data:", formData);
+  const validateEmail = (email:any) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
+
+
+ 
+  const handleSubmit = async (formData:any) => {
+    if (!validateEmail(formData.email)) {
+      setEmailError("Please enter a valid email address.");
+     {emailError && (toast({
+        title: 'Email',
+        description:emailError,
+        status: 'warning',
+        duration: 4000,
+        isClosable: true,
+        position: 'bottom-right',
+      }))};
+      return;
+    }
+
+
+    setLoading(true);
+    try {
+      const res = await AxiosPost(url, formData);
+      setLoading(false);
+      if (res) {
+        toast({
+          title: "success",
+          description: 'thanks for suscribing with us',
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+          position: "bottom-right",
+        });
+       
+      }
+    } catch (err: any) {
+      setLoading(false);
+      let message = "Check your Network and try again.";
+      if (err.response && err.response.data && err.response.data.message) {
+        message = err.response.data.message;
+      }
+      setErrorMessage(message = err.response.data.message ? 'you are already on the list' : message);
+      toast({
+        title: "Error",
+        description: message,
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+        position: "bottom-right",
+      });
+    }
+  };
+
+
+  // const handleSubmit = () => {
+    // console.log("Form data:", formData);
+  // };
   return (
     <>
     <Box display={['none','block']}> 
@@ -231,14 +299,14 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
       display={"flex"}
       justifyContent={"center"}
       alignContent={"center"}
-      pt={["50px", "100px"]}
+      pt={["20px", "100px"]}
     >
       <SimpleGrid
         columns={2}
         w={"full"}
         px={{ lg: "140px", md: "20px", base: "20px" }}
       >
-         <GridItem colSpan={[2,1]} w={"full"} mb={['30px',"50px"]} >
+         {/* <GridItem colSpan={[2,1]} w={"full"} mb={['30px',"50px"]} >
           <VStack w={"full"}>
           <HStack gap={"1px"} mb={["10px", "50px"]} w={"full"}>
             <Image
@@ -291,7 +359,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
                   FAQS
                 </Text>
               </Box>
-            </HStack>
+            </HStack> */}
             {/* <Box w={"full"}>
               <Text fontSize={["16px", "14px"]} fontWeight={"300"}>
                 At BEBO, we empower you to seamlessly convert your
@@ -299,16 +367,16 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
                 gateway to navigate the dynamic world of digital assets.
               </Text>
             </Box> */}
-          </VStack>
+          {/* </VStack>
         </GridItem>
-        <GridItem colSpan={[2,1]}>
-         
+        <GridItem colSpan={[2,1]}> */}
+{/*          
           <Box mb={{base:"10px", lg:"58px", md: "30px"}}>
             <Text fontWeight={"600"} fontSize={{base:"18px", lg:"20px", md: "16px"}}>
               Join our waitlist to be among our first users
             </Text>
-          </Box>
-          <SimpleGrid
+          </Box> */}
+          {/* <SimpleGrid
             columns={{ base: 1, lg: 2, md: 1 }}
             w={"full"}
             gap={"20px"}
@@ -348,12 +416,12 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
                 Join waitlist
               </Button>
             </GridItem>
-          </SimpleGrid>
-        </GridItem>
+          </SimpleGrid> */}
+        {/* </GridItem> */}
        
-        <GridItem colSpan={2} mb={{base:"10px", lg:"40px", md: "20px"}} w={"full"}>
-          <Divider orientation="horizontal" size={"lg"} />
-        </GridItem>
+        {/* <GridItem colSpan={2} mb={{base:"10px", lg:"40px", md: "20px"}} w={"full"}>
+          {/* <Divider orientation="horizontal" size={"lg"} /> */}
+        {/* </GridItem> */} 
         <GridItem colSpan={2} mb={"50px"} w={"full"}>
           <SimpleGrid columns={2}>
             <GridItem colSpan={1}>
@@ -362,7 +430,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
                   <AiOutlineCopyrightCircle size={'10px'} />
                 </Box>
                 <Box>
-                  <Text fontSize={'10px'}>2024 Bebo.</Text>
+                  <Text fontSize={'14px'}>2024 Bebo</Text>
                 </Box>
               </HStack>
             </GridItem>

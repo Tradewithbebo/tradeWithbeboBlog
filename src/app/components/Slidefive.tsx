@@ -9,12 +9,17 @@ import {
   Input,
   SimpleGrid,
   Text,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { AxiosPost } from "./Axios";
 
 export default function Slidefive({slidefive}:{slidefive:any}) {
+  const url = "users/subscribe";
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const Ref=useRef<HTMLDivElement | null>(null);
   const inView=useInView(Ref,{once:true})
@@ -25,7 +30,9 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
     }
 
   },[inView,mainControls])
-    const [formData, setFormData] = useState({ name: "", email: "" });
+  const [formData, setFormData] = useState({ name: "", email: "" });
+  const [emailError, setEmailError] = useState("");
+  const toast = useToast()
 
   const handleChange = (e:any) => {
     const { name, value } = e.target;
@@ -33,11 +40,70 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
       ...formData,
       [name]: value,
     });
+
+    // Clear email error when the user starts typing
+    if (name === "email") {
+      setEmailError("");
+    }
   };
 
-  const handleSubmit = () => {
-    console.log("Form data:", formData);
-    };
+  const validateEmail = (email:any) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+
+ 
+  const handleSubmit = async (formData:any) => {
+    if (!validateEmail(formData.email)) {
+      setEmailError("Please enter a valid email address.");
+     {emailError && (toast({
+        title: 'Email',
+        description:emailError,
+        status: 'warning',
+        duration: 4000,
+        isClosable: true,
+        position: 'bottom-right',
+      }))};
+      return;
+    }
+
+
+    setLoading(true);
+    try {
+      const res = await AxiosPost(url, formData);
+      setLoading(false);
+      if (res) {
+        toast({
+          title: "success",
+          description: 'thanks for suscribing with us',
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+          position: "bottom-right",
+        });
+       
+      }
+    } catch (err: any) {
+      setLoading(false);
+      let message = "Check your Network and try again.";
+      if (err.response && err.response.data && err.response.data.message) {
+        message = err.response.data.message;
+      }
+      setErrorMessage(message = err.response.data.message ? 'you are already on the list' : message);
+      toast({
+        title: "Error",
+        description: message,
+        status: "error",
+        duration: 4000,
+        isClosable: true,
+        position: "bottom-right",
+      });
+    }
+  };
+
+  
+
   return (
     <Box ref={Ref}>
     <motion.div
@@ -66,7 +132,7 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
         // flexDirection={'row'}
       >
         <VStack w={"full"}>
-          <Box mb={"25px"}>
+          <Box mb={["25px"]}>
             <Text
               fontWeight={"600"}
               fontSize={["35px","45px"]}
@@ -115,6 +181,7 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
                   boxShadow="0px -4px 6px rgba(128, 128, 128, 0.2),0px 4px 6px rgba(128, 128, 128, 0.1)"
                   border={"none"}
                 />
+                 
               </FormControl>
             </GridItem>
             <GridItem
@@ -124,7 +191,7 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
               justifyContent={"center"}
             >
               <Button
-                onClick={handleSubmit}
+                onClick={()=>handleSubmit(formData)}
                 w={["full", "55%"]}
                 size={["lg", "lg"]}
                 bg={"#E7F9F4"}
@@ -140,6 +207,7 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
         </VStack>
       </Box>
     </Box>
+  
     </motion.div>
     </Box>
   );
