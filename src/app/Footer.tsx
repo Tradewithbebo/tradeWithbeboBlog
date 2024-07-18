@@ -162,6 +162,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
             >
               <Button
                 onClick={handleSubmit}
+                isLoading={loading}
                 w={["70%", "50%"]}
                 size={["sm", "md"]}
                 bg={"#0CBF94"}
