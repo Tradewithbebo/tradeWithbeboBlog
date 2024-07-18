@@ -56,16 +56,16 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
  
   const handleSubmit = async (formData:any) => {
     if (!validateEmail(formData.email)) {
-      setEmailError("Please enter a valid email address.")
-     {emailError && (toast({
+      // setEmailError("")
+     {(toast({
         title: 'Email',
-        description:emailError,
+        description:'Please enter a valid email address.',
         status: 'warning',
         duration: 4000,
         isClosable: true,
         position: 'bottom-right',
       }))};
-      return;
+      return false
     }
 
 
@@ -193,7 +193,7 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
               justifyContent={"center"}
             >
               <Button
-                onClick={()=>handleSubmit(formData)}
+                onClick={()=>{handleSubmit(formData)}}
                 isLoading={loading}
                 w={["full", "55%"]}
                 size={["lg", "lg"]}

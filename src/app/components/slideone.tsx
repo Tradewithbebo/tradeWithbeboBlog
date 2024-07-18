@@ -90,7 +90,7 @@ export default function Slideone({slideone,slidefive}:{slideone:any,slidefive:an
               fontSize={["9px", "16px"]}
               color={"#FFFFFFE5"}
             >
-              Instantly spend your crypto to cash and vice versa super fast and
+              Instantly swap your crypto to cash and vice versa super fast and
               super
               <span
                 style={{
