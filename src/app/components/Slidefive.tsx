@@ -163,6 +163,7 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
                   placeholder="Enter your name"
                   bg={"#06795D1A"}
                   rounded={"20px"}
+                  color={'white'}
                   boxShadow="0px -4px 6px rgba(128, 128, 128, 0.2),0px 4px 6px rgba(128, 128, 128, 0.1)"
                   border={"none"}
                 />
@@ -176,6 +177,7 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
+                  color={'white'}
                   bg={"#06795D1A"}
                   rounded={"20px"}
                   boxShadow="0px -4px 6px rgba(128, 128, 128, 0.2),0px 4px 6px rgba(128, 128, 128, 0.1)"
