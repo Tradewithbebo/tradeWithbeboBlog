@@ -114,7 +114,7 @@ export default function Slidefour({ slidetwo }: { slidetwo: any }) {
               <Accordions
                 title={"How do I buy cryptocurrency on Bebo ? "}
                 content={
-                 <Link _hover={{color:''}}>Until our app is ready you can send your buy request to us via WhatsApp<span style={{color:"blue",marginLeft:'10px'}}>Click to Trade</span></Link>
+                  <Link variant='unstyled'href={"https://wa.me/message/DMLINAXCGNQYP1"}>Until our app is ready you can send your buy request to us via WhatsApp<span style={{color:"blue",marginLeft:'10px'}}>Click to Trade</span></Link>
                 }
               />
             </Box>

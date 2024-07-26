@@ -76,7 +76,7 @@ export default function Slidefive({slidefive}:{slidefive:any}) {
       if (res) {
         toast({
           title: "success",
-          description: 'thanks for suscribing with us',
+          description: 'thanks for subscribing with us',
           status: "success",
           duration: 4000,
           isClosable: true,

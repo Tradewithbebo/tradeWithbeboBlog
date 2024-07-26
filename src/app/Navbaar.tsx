@@ -1,9 +1,12 @@
+"use client";
+
 import { Box, HStack, Text, Image, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { useRef } from "react";
 import { BsWhatsapp } from "react-icons/bs";
 import { IoLogoWhatsapp } from "react-icons/io";
-
+import { AttentionSeeker } from "react-awesome-reveal";
+import "animate.css/animate.min.css";
 export default function Navbaar({
   slideone,
   slideotwo,
@@ -13,11 +16,13 @@ export default function Navbaar({
   slideotwo: any;
   slidefive: any;
 }) {
+  // Function to restart the animation by updating the key
+
   return (
     <>
       <Box
         w={"full"}
-        bg={"#0D3E32"}
+        bg={"#033125"}
         cursor={"pointer"}
         display={{ base: "none", md: "none", lg: "block" }}
       >
@@ -36,19 +41,26 @@ export default function Navbaar({
                   <Image src="/image/Bebo.png" alt="Bebo" />
                 </Box>
               </HStack>
-              <Box
-              >
+              <Box>
                 <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
-                <Text fontWeight={"600"} fontSize={"16px"} color={"#FFFFFFE5"}>
-                  Sell crypto
-                </Text>
+                  <Text
+                    fontWeight={"600"}
+                    fontSize={"16px"}
+                    color={"#FFFFFFE5"}
+                  >
+                    Sell crypto
+                  </Text>
                 </Link>
               </Box>
               <Box>
-              <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
-                <Text fontWeight={"600"} fontSize={"16px"} color={"#FFFFFFE5"}>
-                  Buy crypto
-                </Text>
+                <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
+                  <Text
+                    fontWeight={"600"}
+                    fontSize={"16px"}
+                    color={"#FFFFFFE5"}
+                  >
+                    Buy crypto
+                  </Text>
                 </Link>
               </Box>
               <Box
@@ -63,38 +75,46 @@ export default function Navbaar({
                 </Text>
               </Box>
             </HStack>
-            <HStack gap={"15px"}>
+            <HStack gap={"40px"}>
               <Box>
-              <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
-                <Button
-                  fontWeight={"700"}
-                  fontSize={"16px"}
-                  color={"#FFFFFFE5"}
-                  bg={"#4C5C58"}
-                  rounded={"50px"}
-                  size={"lg"}
-                  // _hover={{ color: "#021D17" }}
-                  _hover={{
-                    color: "#021D17",
-                    transform: "scale(1.1)",
-                  }}
-                >
-                  <Image
-                    boxSize={"22px"}
-                    objectFit="cover"
-                    src="/image/whatsapp.png"
-                    alt="Bebo"
-                    mr={"10px"}
-                  />
-                  Trade on WhatsApp
-                </Button>
+                <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
+                  <AttentionSeeker
+                    effect="heartBeat"
+                    duration={2000}
+                    className="animate__animated animate__heartBeat animate__infinite "
+                  >
+                    <Button
+                      fontWeight={"700"}
+                      fontSize={"16px"}
+                      color={"#FFFFFFE5"}
+                      bg={"#4C5C58"}
+                      rounded={"50px"}
+                      size={"lg"}
+                      // _hover={{ color: "#021D17" }}
+                      _hover={{
+                        color: "#021D17",
+                        transform: "scale(1.1)",
+                      }}
+                    >
+                      <Image
+                        boxSize={"22px"}
+                        objectFit="cover"
+                        src="/image/whatsapp.png"
+                        alt="Bebo"
+                        mr={"10px"}
+                      />
+                      Trade on WhatsApp
+                    </Button>
+                  </AttentionSeeker>
                 </Link>
               </Box>
-              <Box onClick={() => {
-                    slidefive.current?.scrollIntoView({
-                      behavior: "smooth",
-                    });
-                  }}>
+              <Box
+                onClick={() => {
+                  slidefive.current?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              >
                 <Button
                   fontWeight={"700"}
                   fontSize={"16px"}
@@ -106,8 +126,6 @@ export default function Navbaar({
                     // color:'#021D17',
                     transform: "scale(1.1)",
                   }}
-                  
-                  
                 >
                   Join waitlist
                 </Button>
@@ -122,7 +140,7 @@ export default function Navbaar({
           py={{ base: "15px", md: "15px" }}
           // px={{base: "20px", md:"60px"}}
           w={"full"}
-          bg={"#0D3E32"}
+          bg={"#033125"}
           justifyContent={"center"}
           mb={"-2px"}
         >
@@ -141,56 +159,75 @@ export default function Navbaar({
                 </Box>
               </HStack>
               <Box ml={"4px"}>
-              <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
-                <Text fontWeight={"600"} fontSize={"14px"} color={"#FFFFFFE5"}>
-                  Sell crypto
-                </Text>
+                <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
+                  <Text
+                    fontWeight={"600"}
+                    fontSize={"14px"}
+                    color={"#FFFFFFE5"}
+                  >
+                    Sell crypto
+                  </Text>
                 </Link>
               </Box>
               <Box>
-              <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
-                <Text fontWeight={"600"} fontSize={"14px"} color={"#FFFFFFE5"}>
-                  Buy crypto
-                </Text>
+                <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
+                  <Text
+                    fontWeight={"600"}
+                    fontSize={"14px"}
+                    color={"#FFFFFFE5"}
+                  >
+                    Buy crypto
+                  </Text>
                 </Link>
               </Box>
-              <Box  onClick={() => {
+              <Box
+                onClick={() => {
                   slideotwo.current?.scrollIntoView({
                     behavior: "smooth",
                   });
-                }}>
+                }}
+              >
                 <Text fontWeight={"600"} fontSize={"14px"} color={"#FFFFFFE5"}>
                   FAQS
                 </Text>
               </Box>
               <Box display={{ base: "none", md: "block", lg: "none" }}>
-              <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
-                <Button
-                  fontWeight={"700"}
-                  fontSize={"14px"}
-                  color={"#FFFFFFE5"}
-                  bg={"#4C5C58"}
-                  rounded={"50px"}
-                  size={"md"}
-                  _hover={{ color: "#021D17" }}
-                >
-                  <Image
-                    boxSize={"14px"}
-                    objectFit="cover"
-                    src="/image/whatsapp.png"
-                    alt="Bebo"
-                    mr={"10px"}
-                  />
-                  Trade on WhatsApp
-                </Button>
+                <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
+                  <AttentionSeeker
+                    effect="heartBeat"
+                    duration={2000}
+                    className="animate__animated animate__heartBeat animate__infinite "
+                  >
+                    <Button
+                      fontWeight={"700"}
+                      fontSize={"14px"}
+                      color={"#FFFFFFE5"}
+                      bg={"#4C5C58"}
+                      rounded={"50px"}
+                      size={"md"}
+                      _hover={{ color: "#021D17" }}
+                    >
+                      <Image
+                        boxSize={"14px"}
+                        objectFit="cover"
+                        src="/image/whatsapp.png"
+                        alt="Bebo"
+                        mr={"10px"}
+                      />
+                      Trade on WhatsApp
+                    </Button>
+                  </AttentionSeeker>
                 </Link>
-                </Box>
-              
-              <Box onClick={() => {
-                    slidefive.current?.scrollIntoView({
-                      behavior: "smooth",
-                    });
-                  }} display={{ base: "none", md: "block", lg: "none" }}>
+              </Box>
+
+              <Box
+                onClick={() => {
+                  slidefive.current?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                display={{ base: "none", md: "block", lg: "none" }}
+              >
                 <Button
                   fontWeight={"700"}
                   fontSize={"10px"}

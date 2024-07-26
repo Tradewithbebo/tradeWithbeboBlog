@@ -10,8 +10,9 @@ import { useEffect, useRef } from "react";
 import Slidefive from "./components/Slidefive";
 import Footer from "./Footer";
 // import Zoom from 'react-reveal/Zoom';
-import {motion,useInView,useAnimation} from 'framer-motion'
+import { motion, useInView, useAnimation } from "framer-motion";
 import { Box } from "@chakra-ui/react";
+import Subslidetwo from "./components/Subslidetwo";
 
 export default function Home() {
   const slideone = useRef<HTMLDivElement | null>(null);
@@ -19,21 +20,23 @@ export default function Home() {
   const slidefive = useRef<HTMLDivElement | null>(null);
   return (
     <>
-    <Box position="sticky" top={'0px'}  left="0" width="100%" zIndex="1000">
-    <Navbaar
-        slideone={slideone}
-        slideotwo={slideotwo}
-        slidefive={slidefive}
-      />
-    </Box>
-      
-        <Slideone slideone={slideone} slidefive={slidefive} />
+      <Box position="sticky" top={"0px"} left="0" width="100%" zIndex="1000">
+        <Navbaar
+          slideone={slideone}
+          slideotwo={slideotwo}
+          slidefive={slidefive}
+        />
+      </Box>
+
+      <Slideone slideone={slideone} slidefive={slidefive} />
       <Slidetwo />
+      <Subslidetwo />
       <Slidethree />
       <Slidefour slidetwo={slideotwo} />
+
       <Slidefive slidefive={slidefive} />
-     <Footer slideotwo={slideotwo} />
-      
+
+      <Footer slideotwo={slideotwo} />
     </>
   );
 }
