@@ -110,7 +110,7 @@ export default function Subslidetwo() {
                 <Box mb={["-40px", "20px"]}>
                   <Text
                     fontWeight={"700"}
-                    fontSize={["35px"]}
+                    fontSize={["30px", "35px"]}
                     color={"#021D17"}
                   >
                     Why Choose Bebo?
