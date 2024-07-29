@@ -11,7 +11,7 @@ import {
 import React, { useEffect, useRef } from "react";
 import CarD from "./Card";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { Fade } from "react-awesome-reveal";
+import { AttentionSeeker, Fade } from "react-awesome-reveal";
 
 export default function Slidethree() {
   const Ref = useRef<HTMLDivElement | null>(null);
@@ -119,6 +119,11 @@ export default function Slidethree() {
                       variant="unstyled"
                       href={"https://wa.me/message/DMLINAXCGNQYP1"}
                     >
+                       <AttentionSeeker
+                    effect="heartBeat"
+                    duration={2000}
+                    className="animate__animated animate__heartBeat animate__infinite "
+                  >
                       <Button
                         fontWeight={"700"}
                         fontSize={"16px"}
@@ -137,6 +142,7 @@ export default function Slidethree() {
                         />
                         Trade on WhatsApp
                       </Button>
+                      </AttentionSeeker>
                     </Link>
                   </Box>
                 </GridItem>

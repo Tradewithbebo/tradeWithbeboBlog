@@ -28,7 +28,7 @@ export default function Slidefour({ slidetwo }: { slidetwo: any }) {
         <Box
           ref={slidetwo}
           w={"full"}
-          pb={{ base: "55px", md: "150px", lg: "200px" }}
+          pb={{ base: "75px", md: "100px", lg: "118px" }}
         >
           <VStack w={"full"} justifyContent={"center"} display={"flex"}>
             <Box

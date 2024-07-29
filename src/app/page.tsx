@@ -13,6 +13,7 @@ import Footer from "./Footer";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { Box } from "@chakra-ui/react";
 import Subslidetwo from "./components/Subslidetwo";
+import Blog from "./components/Blog";
 
 export default function Home() {
   const slideone = useRef<HTMLDivElement | null>(null);
@@ -33,9 +34,9 @@ export default function Home() {
       <Subslidetwo />
       <Slidethree />
       <Slidefour slidetwo={slideotwo} />
-
+      <Blog />
       <Slidefive slidefive={slidefive} />
-
+      
       <Footer slideotwo={slideotwo} />
     </>
   );
