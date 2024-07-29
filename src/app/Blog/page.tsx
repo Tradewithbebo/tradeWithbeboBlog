@@ -25,8 +25,10 @@ import Footer from "../Footer";
 export default function page() {
 
   return (
+
     <VStack height="full" w={"full"} cursor={"pointer"} bg={'white'}>
       <Box
+      bg={'#6ee7b7'}
         overflow={"hidden"}
         h={["full"]}
         w={"full"}
