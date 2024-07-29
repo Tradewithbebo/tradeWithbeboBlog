@@ -48,6 +48,7 @@ export  function Blogcard2({
   content: any;
   title: any;
 }) {
+  
   return (
     <Card size={{base:'sm',md:'sm',lg:'sm'}}>
       <CardBody>

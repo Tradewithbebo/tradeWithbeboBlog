@@ -23,6 +23,7 @@ import Footer from "../Footer";
 // import page from './page';
 
 export default function page() {
+
   return (
     <VStack height="full" w={"full"} cursor={"pointer"} bg={'white'}>
       <Box
@@ -37,7 +38,7 @@ export default function page() {
         backgroundSize="cover"
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
-        pt={["20px", "60px"]}
+        pt={["35px", "60px"]}
         // boxSize={'100%'}
         px={{base:"30px", lg:"50px",md:'30px'}}
         // pl={'800px'}
@@ -157,7 +158,7 @@ export default function page() {
        
       {blog.map((blog, index) => (
         <GridItem colSpan={1} key={index}   w={'full'} >
-            <Fade direction={index===0?"left":index===1?'up':'right'} triggerOnce={true}>
+            <Fade direction={index%2===0?"up":index%3===0?'right':'left'} triggerOnce={true}>
           <Blogcard
             src={blog.image}
             content={blog.content}
