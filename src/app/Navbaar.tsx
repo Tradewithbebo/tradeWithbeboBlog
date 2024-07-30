@@ -75,7 +75,7 @@ export default function Navbaar({
                 </Text>
               </Box>
               <Box>
-                <Link href={"/blog"}>
+                <Link href={"/Blog"}>
                   <Text
                     fontWeight={"600"}
                     fontSize={"16px"}
@@ -204,7 +204,7 @@ export default function Navbaar({
                 </Text>
               </Box>
               <Box>
-                <Link href={"/blog"}>
+                <Link href={"/Blog"}>
                   <Text
                     fontWeight={"600"}
                     fontSize={"14px"}
