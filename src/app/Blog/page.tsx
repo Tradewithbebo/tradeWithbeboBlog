@@ -69,12 +69,14 @@ export default function page() {
               <Button
                 // color={"white"}
                 bg={"#047857"}
-                fontWeight={"500"}
-                fontSize={"18px"}
+                
+                    fontWeight={"500"}
+                    fontSize={"18px"}
+                 
                 color={"#FFFFFFE5"}
                 _hover={""}
                 rounded={"20px"}
-                size={["sm", "md"]}
+                size={["md", "md"]}
               >
                 Our blog
               </Button>
