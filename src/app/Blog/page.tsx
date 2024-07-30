@@ -28,7 +28,7 @@ export default function page() {
 
     <VStack height="full" w={"full"} cursor={"pointer"} bg={'white'}>
       <Box
-      bg={'#6ee7b7'}
+      // bg={'#6ee7b7'}
         overflow={"hidden"}
         h={["full"]}
         w={"full"}
