@@ -79,7 +79,7 @@ export default function Blog() {
             display={"flex"}
           >
             <Fade direction="up" triggerOnce={true}>
-              <Link href={"/blog"}>
+              <Link href={"/Blog"}>
                 <Button bg={"#0CBF94"} color={"#021D17"} rounded={"20px"} size={'md'} px={'70px'}>
                   See Blogs
                 </Button>
