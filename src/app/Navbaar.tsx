@@ -74,6 +74,17 @@ export default function Navbaar({
                   FAQS
                 </Text>
               </Box>
+              <Box>
+                <Link href={"/blog"}>
+                  <Text
+                    fontWeight={"600"}
+                    fontSize={"16px"}
+                    color={"#FFFFFFE5"}
+                  >
+                    Blogs
+                  </Text>
+                </Link>
+              </Box>
             </HStack>
             <HStack gap={"40px"}>
               <Box>
@@ -190,6 +201,17 @@ export default function Navbaar({
                 <Text fontWeight={"600"} fontSize={"14px"} color={"#FFFFFFE5"}>
                   FAQS
                 </Text>
+              </Box>
+              <Box>
+                <Link href={"/Blog"}>
+                  <Text
+                    fontWeight={"600"}
+                    fontSize={"16px"}
+                    color={"#FFFFFFE5"}
+                  >
+                    Blogs
+                  </Text>
+                </Link>
               </Box>
               <Box display={{ base: "none", md: "block", lg: "none" }}>
                 <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>

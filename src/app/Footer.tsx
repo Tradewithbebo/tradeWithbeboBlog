@@ -108,12 +108,12 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
       display={"flex"}
       justifyContent={"center"}
       alignContent={"center"}
-      pt={["50px", "100px"]}
+      pt={["50px", "50px"]}
     >
       <SimpleGrid
         columns={2}
         w={"full"}
-        px={{ lg: "140px", md: "20px", base: "10px" }}
+        px={{ lg: "30px", md: "20px", base: "10px" }}
       >
         <GridItem colSpan={[2,1]}>
           <HStack gap={"1px"} mb={["12px", "50px"]}>
@@ -294,7 +294,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
         </GridItem>
       </SimpleGrid>
     </Box>
-    </Box><Box display={['block','none']}> 
+    </Box><Box display={['block','none']} > 
       <Box 
       w={"full"}
       display={"flex"}
@@ -424,8 +424,8 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
           {/* <Divider orientation="horizontal" size={"lg"} /> */}
         {/* </GridItem> */} 
         <GridItem colSpan={2} mb={"50px"} w={"full"}>
-          <SimpleGrid columns={2}>
-            <GridItem colSpan={1}>
+          <SimpleGrid columns={2} w={'full'}>
+            <GridItem colSpan={1} display={'flex'} justifyContent={'start'} w={'full'}>
               <HStack>
                 <Box>
                   <AiOutlineCopyrightCircle size={'10px'} />
@@ -463,7 +463,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
               display={['block','none']}
             >
               <HStack  w={"full"}
-              justifyContent={"end"}>
+              justifyContent={"end"} display={'flex'}>
                  <Link href={"https://www.instagram.com/tradewithbebo?igsh=eTRkcXl3d3R4bmRo"}>
                 <Box border={"1px"} p={"5px"} color={"grey"} rounded={"50%"}>
                   <FiInstagram size={'15px'}/>
