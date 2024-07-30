@@ -158,7 +158,7 @@ export default function Navbaar({
         >
           <HStack w={"full"} justifyContent={"center"} display={"flex"}>
             <HStack gap={"32px"}>
-              <HStack gap={"5px"}>
+            <HStack gap={"5px"}>
                 <Image
                   height="15px"
                   width="12px"
@@ -166,7 +166,7 @@ export default function Navbaar({
                   src="/image/logo.png"
                   alt="Bebo"
                 />
-                <Box height="13px" width="43px">
+                <Box height="13px" width="39px">
                   <Image src="/image/Bebo.png" alt="Bebo" />
                 </Box>
               </HStack>
@@ -207,7 +207,7 @@ export default function Navbaar({
                 <Link href={"/blog"}>
                   <Text
                     fontWeight={"600"}
-                    fontSize={"16px"}
+                    fontSize={"14px"}
                     color={"#FFFFFFE5"}
                   >
                     Blogs
