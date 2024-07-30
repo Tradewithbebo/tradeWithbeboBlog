@@ -177,11 +177,11 @@ export default function Navbaar({
                     fontSize={"14px"}
                     color={"#FFFFFFE5"}
                   >
-                    Sell crypto
+                    Buy & Sell crypto
                   </Text>
                 </Link>
               </Box>
-              <Box>
+              {/* <Box>
                 <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
                   <Text
                     fontWeight={"600"}
@@ -191,7 +191,7 @@ export default function Navbaar({
                     Buy crypto
                   </Text>
                 </Link>
-              </Box>
+              </Box> */}
               <Box
                 onClick={() => {
                   slideotwo.current?.scrollIntoView({

@@ -7,8 +7,8 @@ import { FaHouse } from "react-icons/fa6";
 export default function Blognav() {
   return (
     <Box w={"full"} bg={"#0CBF94"} py={["15px"]} px={['20px',"80px"]} mb={"-9px"}>
-      <HStack gap={[]}>
-        <Box flex={[1]} >
+      <HStack justifyContent={['space-between']} w={'full'} display={'flex'}>
+        <Box  >
           <Button
             color={"white"}
             bg={"#047857"}
