@@ -145,6 +145,7 @@ export default function page() {
             </HStack>
           </Fade>
           <SimpleGrid
+          
             pb={["", ""]}
             pt={"50px"}
             templateColumns={["repeat(1, 1fr)", "repeat(3, 1fr)"]}
@@ -178,7 +179,7 @@ export default function page() {
         justifyContent={"center"}
         gap={{ lg: "20px", md: "14px", base: "14px" }}
         alignItems={"center"}
-        px={{ base: "30px", lg: "50px", md: "15px" }}
+        px={{ base: "30px", lg: "50px", md: "30px" }}
         w={"full"}
       >
         {blog.slice(0, visibleItems).map((blog, index) => (

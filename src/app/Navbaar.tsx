@@ -145,8 +145,9 @@ export default function Navbaar({
           </HStack>
         </Box>
       </Box>
-      <Box display={{ base: "block", md: "block", lg: "none" }} w={"100%"}>
+      <Box display={{ base: "block", md: "block", lg: "none" }} w={"100%"} >
         <Box
+        px={['15px','5px']}
           display={"flex"}
           py={{ base: "15px", md: "15px" }}
           // px={{base: "20px", md:"60px"}}
@@ -203,7 +204,7 @@ export default function Navbaar({
                 </Text>
               </Box>
               <Box>
-                <Link href={"/Blog"}>
+                <Link href={"/blog"}>
                   <Text
                     fontWeight={"600"}
                     fontSize={"16px"}
