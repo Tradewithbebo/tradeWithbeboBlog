@@ -1,14 +1,19 @@
 import { Box, Button, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Blogcard, { Blogcard2 } from "./Blogcard";
 import { subblog } from "./blogcontent";
 import { Fade } from "react-awesome-reveal";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Link from "next/link";
+import { AxiosGet } from "./Axios";
 export default function Blog() {
   const Ref = useRef<HTMLDivElement | null>(null);
   const inView = useInView(Ref, { once: true });
   const mainControls = useAnimation();
+  
+ 
+  
+ 
   useEffect(() => {
     if (inView) {
       mainControls.start("visible");
@@ -91,3 +96,7 @@ export default function Blog() {
     </>
   );
 }
+// function AxiosGet(url: any) {
+//   throw new Error("Function not implemented.");
+// }
+
