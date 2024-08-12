@@ -6,6 +6,24 @@ export const blog = [
       "How do you create compelling presentations that wow your colleagues and impress your managers?",
   },
   {
+    image: "/Image/blogone.svg",
+    title: "UX review presentations",
+    content:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+  },
+  {
+    image: "/Image/blogone.svg",
+    title: "UX review presentations",
+    content:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+  },
+  {
+    image: "/Image/blogone.svg",
+    title: "UX review presentations",
+    content:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+  },
+  {
     image: "/Image/bogtwo.svg",
     title: "Migrating to Linear 101",
     content:

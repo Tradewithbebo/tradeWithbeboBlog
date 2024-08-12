@@ -63,11 +63,38 @@ export default function Blogcardrebuild() {
       setErrorMessage(message);
     }
   };
+  // function RepeatingFadeText() {
+    const [key, setKey] = useState(0);
+    const reanimationTime = 2000;
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+      setKey((prevKey) => prevKey + 1);
+    }, reanimationTime);
 
+    return () => clearInterval(interval);
+  }, [reanimationTime]);
   useEffect(() => {
     getBlogPost();
   }, []);
+  if (isLoading) {
+    return <Box><HStack gap={['15px','40px']} display={'flex'} justifyContent={'center'}>
+      <Fade key={key} cascade damping={0.1}>
+      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>B</Text>
+      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>E</Text>
+      <Text fontSize={['20px','60px']}fontWeight={'700'} color={'#0AA07C'}>B</Text>
+      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>O</Text>
+      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
+      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
+      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
+      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
+      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
+      </Fade>
+      </HStack></Box>;
+  }
+
   return (
+    
     <SimpleGrid
       columns={{ base: 1, md: 3, lg: 3 }}
       spacing={6}
@@ -90,12 +117,14 @@ export default function Blogcardrebuild() {
                   </GridItem>
                 </SimpleGrid>
               </Heading>
-              <Text flex={1}>
-                content=
-                {blog.content.length > 200
-                  ? blog.content.slice(0, 200) + "..."
-                  : blog.content}
-              </Text>
+              <div
+                style={{ flex: 1 }}
+                dangerouslySetInnerHTML={{
+                  __html:
+                  
+                       blog.content.image
+                }}
+              />
             </Stack>
           </CardBody>
         </Card>

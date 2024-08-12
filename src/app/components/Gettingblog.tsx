@@ -29,60 +29,60 @@ import Blogcardrebuild, { Blogcardrebuild2 } from "./blogcardrebuild";
 
 export default function Getblog() {
   // Number of items to show initially and per load more click
-  const ITEMS_PER_PAGE = 3;
-  const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE + 3); // Start at 4th index
-  const handleLoadMore = () => {
-    setVisibleItems((prevVisibleItems) => prevVisibleItems + ITEMS_PER_PAGE);
-  };
-  interface BlogItem {
-    slug: string;
-    sourceUrl:any;
-    title:any;
-    content:any;
-    // add other properties as needed, e.g., image, content, etc.
-  }
+  // const ITEMS_PER_PAGE = 3;
+  // const [visibleItems, setVisibleItems] = useState(ITEMS_PER_PAGE + 3); // Start at 4th index
+  // const handleLoadMore = () => {
+  //   setVisibleItems((prevVisibleItems) => prevVisibleItems + ITEMS_PER_PAGE);
+  // };
+  // interface BlogItem {
+  //   slug: string;
+  //   sourceUrl:any;
+  //   title:any;
+  //   content:any;
+  //   // add other properties as needed, e.g., image, content, etc.
+  // }
   
   const url = 'blog'
   
-  const [Blogdata, setBlogdata] = useState<BlogItem[]>([]);
+  // const [Blogdata, setBlogdata] = useState<BlogItem[]>([]);
 
   
   const [errorMessage, setErrorMessage] = useState("");
  
   const [isLoading, setIsLoading] = useState(true);
   
-  const getBlogPost = async () => {
-    setIsLoading(true);
-    try {
-      const res = await AxiosGet(url);
-      setIsLoading(false); // Set loading state to false after the request is complete
+  // const getBlogPost = async () => {
+  //   setIsLoading(true);
+  //   try {
+  //     const res = await AxiosGet(url);
+  //     setIsLoading(false); // Set loading state to false after the request is complete
   
-      if (res && res.data && res.data.items) {
-        const items = res.data.items;
+  //     if (res && res.data && res.data.items) {
+  //       const items = res.data.items;
   
-        // items.forEach((item: any) => {
-        //   console.log('k',item.author);
-        // });
+  //       // items.forEach((item: any) => {
+  //       //   console.log('k',item.author);
+  //       // });
   
-        setBlogdata(items);
-        console.log('Blog Items:', items);
+  //       setBlogdata(items);
+  //       console.log('Blog Items:', items);
         
-        setErrorMessage(''); // Clear error message on success
-        return true;
-      }
-    } catch (err: any) {
-      setIsLoading(false);
-      let message = "Check your Network and try again.";
-      if (err.response && err.response.data && err.response.data.message) {
-        message = err.response.data.message;
-      }
-      setErrorMessage(message);
-    }
-  };
+  //       setErrorMessage(''); // Clear error message on success
+  //       return true;
+  //     }
+  //   } catch (err: any) {
+  //     setIsLoading(false);
+  //     let message = "Check your Network and try again.";
+  //     if (err.response && err.response.data && err.response.data.message) {
+  //       message = err.response.data.message;
+  //     }
+  //     setErrorMessage(message);
+  //   }
+  // };
   
-  useEffect(() => {
-    getBlogPost()
-  }, []);
+  // useEffect(() => {
+  //   getBlogPost()
+  // }, []);
   return (
     <VStack height="full" w={"full"} cursor={"pointer"} bg={"white"}>
       <Box
@@ -197,7 +197,7 @@ export default function Getblog() {
             </HStack>
           </Fade>
          <Box w={['100%','100%']} pb={'10px'} pt={'60px'}>
-        <Blogcardrebuild/>
+        <Blogcardrebuild />
          </Box>
         </VStack>
       </Box>
