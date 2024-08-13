@@ -8,7 +8,7 @@ import {
   HStack,
   SimpleGrid,
   GridItem,
-//   Link,
+  //   Link,
   Input,
   border,
 } from "@chakra-ui/react";
@@ -26,7 +26,6 @@ import { AxiosGet } from "../components/Axios";
 import Link from "next/link";
 import Blogcardrebuild, { Blogcardrebuild2 } from "./blogcardrebuild";
 
-
 export default function Getblog() {
   // Number of items to show initially and per load more click
   // const ITEMS_PER_PAGE = 3;
@@ -41,32 +40,31 @@ export default function Getblog() {
   //   content:any;
   //   // add other properties as needed, e.g., image, content, etc.
   // }
-  
-  const url = 'blog'
-  
+
+  const url = "blog";
+
   // const [Blogdata, setBlogdata] = useState<BlogItem[]>([]);
 
-  
   const [errorMessage, setErrorMessage] = useState("");
- 
+
   const [isLoading, setIsLoading] = useState(true);
-  
+
   // const getBlogPost = async () => {
   //   setIsLoading(true);
   //   try {
   //     const res = await AxiosGet(url);
   //     setIsLoading(false); // Set loading state to false after the request is complete
-  
+
   //     if (res && res.data && res.data.items) {
   //       const items = res.data.items;
-  
+
   //       // items.forEach((item: any) => {
   //       //   console.log('k',item.author);
   //       // });
-  
+
   //       setBlogdata(items);
   //       console.log('Blog Items:', items);
-        
+
   //       setErrorMessage(''); // Clear error message on success
   //       return true;
   //     }
@@ -79,7 +77,7 @@ export default function Getblog() {
   //     setErrorMessage(message);
   //   }
   // };
-  
+
   // useEffect(() => {
   //   getBlogPost()
   // }, []);
@@ -119,10 +117,8 @@ export default function Getblog() {
               <Button
                 // color={"white"}
                 bg={"#047857"}
-                
-                    fontWeight={"500"}
-                    fontSize={"18px"}
-                 
+                fontWeight={"500"}
+                fontSize={"18px"}
                 color={"#FFFFFFE5"}
                 _hover={""}
                 rounded={"20px"}
@@ -153,14 +149,13 @@ export default function Getblog() {
               </Text>
             </Fade>
           </Box>
-          <Box mb={"20px"} display={{base:'none',lg:'flex',md:"flex"}}>
+          <Box mb={"20px"} display={{ base: "none", lg: "flex", md: "flex" }}>
             <Fade direction="left" triggerOnce={true}>
               <Text
                 fontWeight={"600"}
                 fontSize={["14px", "18px"]}
                 color={"#051F25"}
-                textAlign={'center'}
-                
+                textAlign={"center"}
               >
                 Read about what Bebo is doing, and about trends
                 <span
@@ -174,19 +169,17 @@ export default function Getblog() {
                   in the crypto space generally.
                 </span>
               </Text>
-             
             </Fade>
           </Box>
-          <Box mb={"20px"} display={{base:'flex',lg:'none',md:"none"}} >
+          <Box mb={"20px"} display={{ base: "flex", lg: "none", md: "none" }}>
             <Fade direction="left" triggerOnce={true}>
               <Text
                 fontWeight={"600"}
                 fontSize={["14px", "18px"]}
                 color={"#051F25"}
-                textAlign={'center'}
-                
+                textAlign={"center"}
               >
-                Read about what Bebo is doing, 
+                Read about what Bebo is doing,
                 <span
                   style={{
                     justifyContent: "center",
@@ -198,7 +191,6 @@ export default function Getblog() {
                   and about trends space generally.
                 </span>
               </Text>
-             
             </Fade>
           </Box>
           {/* search bar */}
@@ -223,14 +215,14 @@ export default function Getblog() {
               </Box>
             </HStack>
           </Fade>
-         <Box w={['100%','100%']} pb={'10px'} pt={'60px'}>
-        <Blogcardrebuild />
-         </Box>
+          <Box w={["100%", "100%"]} pb={"10px"} pt={"60px"}>
+            <Blogcardrebuild />
+          </Box>
         </VStack>
       </Box>
       <SimpleGrid
         pb={["45px", "70px"]}
-          pt={'50px'}
+        pt={"50px"}
         // templateColumns={["repeat(1, 1fr)", "repeat(3, 1fr)"]}
         justifyContent={"center"}
         gap={{ lg: "70px", md: "14px", base: "14px" }}
@@ -238,12 +230,18 @@ export default function Getblog() {
         px={{ base: "30px", lg: "50px", md: "30px" }}
         w={"full"}
       >
-        
-        <Blogcardrebuild2/>
+        <Blogcardrebuild2 />
       </SimpleGrid>
-      
-      <Box w={"full"}>
-        <Footer slideotwo={""} />
+
+      <Box
+        w="full"
+        display={{
+          base: isLoading ? "none" : "flex",
+          md: "flex",
+          lg: "flex",
+        }}
+      >
+        <Footer slideotwo="" />
       </Box>
     </VStack>
   );
