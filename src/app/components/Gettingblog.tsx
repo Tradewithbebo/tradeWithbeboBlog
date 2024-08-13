@@ -153,12 +153,14 @@ export default function Getblog() {
               </Text>
             </Fade>
           </Box>
-          <Box mb={"20px"}>
+          <Box mb={"20px"} display={{base:'none',lg:'flex',md:"flex"}}>
             <Fade direction="left" triggerOnce={true}>
               <Text
                 fontWeight={"600"}
                 fontSize={["14px", "18px"]}
                 color={"#051F25"}
+                textAlign={'center'}
+                
               >
                 Read about what Bebo is doing, and about trends
                 <span
@@ -172,6 +174,31 @@ export default function Getblog() {
                   in the crypto space generally.
                 </span>
               </Text>
+             
+            </Fade>
+          </Box>
+          <Box mb={"20px"} display={{base:'flex',lg:'none',md:"none"}} >
+            <Fade direction="left" triggerOnce={true}>
+              <Text
+                fontWeight={"600"}
+                fontSize={["14px", "18px"]}
+                color={"#051F25"}
+                textAlign={'center'}
+                
+              >
+                Read about what Bebo is doing, 
+                <span
+                  style={{
+                    justifyContent: "center",
+                    width: "full",
+                    display: "flex",
+                  }}
+                >
+                  {" "}
+                  and about trends space generally.
+                </span>
+              </Text>
+             
             </Fade>
           </Box>
           {/* search bar */}

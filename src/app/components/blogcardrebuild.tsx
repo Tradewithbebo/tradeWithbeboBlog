@@ -110,7 +110,14 @@ export default function Blogcardrebuild() {
               <Heading size={["sm", "md"]}>
                 <SimpleGrid columns={5} w="full">
                   <GridItem colSpan={4} w="full">
-                    <Text>{blog.title}</Text>
+                  <div
+                // style={{ flex: 1 }}
+                dangerouslySetInnerHTML={{
+                  __html:
+                  
+                       blog.title
+                }}
+              />
                   </GridItem>
                   <GridItem colSpan={1} justifyContent="end" display="flex">
                     <MdArrowOutward />
@@ -122,7 +129,7 @@ export default function Blogcardrebuild() {
                 dangerouslySetInnerHTML={{
                   __html:
                   
-                       blog.content.image
+                       blog.content
                 }}
               />
             </Stack>
