@@ -423,7 +423,7 @@ export default function Footer({ slideotwo }: { slideotwo: any }) {
         {/* <GridItem colSpan={2} mb={{base:"10px", lg:"40px", md: "20px"}} w={"full"}>
           {/* <Divider orientation="horizontal" size={"lg"} /> */}
         {/* </GridItem> */} 
-        <GridItem colSpan={2} mb={"50px"} w={"full"}>
+        <GridItem colSpan={2} mb={"10px"} w={"full"}>
           <SimpleGrid columns={2} w={'full'}>
             <GridItem colSpan={1} display={'flex'} justifyContent={'start'} w={'full'}>
               <HStack>
