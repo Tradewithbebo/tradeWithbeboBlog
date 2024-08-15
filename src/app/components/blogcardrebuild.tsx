@@ -18,12 +18,14 @@ import { MdArrowOutward } from "react-icons/md";
 import { AxiosGet } from "./Axios";
 import { AttentionSeeker, Fade } from "react-awesome-reveal";
 import { FaArrowDown } from "react-icons/fa6";
+import Link from "next/link";
 export default function Blogcardrebuild() {
   interface BlogItem {
     slug: string;
     sourceUrl: any;
     title: any;
     content: any;
+    featuredImage: any;
     // add other properties as needed, e.g., image, content, etc.
   }
 
@@ -64,11 +66,11 @@ export default function Blogcardrebuild() {
     }
   };
   // function RepeatingFadeText() {
-    const [key, setKey] = useState(0);
-    const reanimationTime = 2000;
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
+  const [key, setKey] = useState(0);
+  const reanimationTime = 2000;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
       setKey((prevKey) => prevKey + 1);
     }, reanimationTime);
 
@@ -78,23 +80,84 @@ export default function Blogcardrebuild() {
     getBlogPost();
   }, []);
   if (isLoading) {
-    return <Box><HStack gap={['15px','40px']} display={'flex'} justifyContent={'center'}>
-      <Fade key={key} cascade damping={0.1}>
-      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>B</Text>
-      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>E</Text>
-      <Text fontSize={['20px','60px']}fontWeight={'700'} color={'#0AA07C'}>B</Text>
-      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>O</Text>
-      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
-      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
-      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
-      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
-      <Text fontSize={['20px','60px']} fontWeight={'700'} color={'#0AA07C'}>.</Text>
-      </Fade>
-      </HStack></Box>;
+    return (
+      <Box>
+        <HStack
+          gap={["15px", "40px"]}
+          display={"flex"}
+          justifyContent={"center"}
+        >
+          <Fade key={key} cascade damping={0.1}>
+            <Text
+              fontSize={["20px", "60px"]}
+              fontWeight={"700"}
+              color={"#0AA07C"}
+            >
+              B
+            </Text>
+            <Text
+              fontSize={["20px", "60px"]}
+              fontWeight={"700"}
+              color={"#0AA07C"}
+            >
+              E
+            </Text>
+            <Text
+              fontSize={["20px", "60px"]}
+              fontWeight={"700"}
+              color={"#0AA07C"}
+            >
+              B
+            </Text>
+            <Text
+              fontSize={["20px", "60px"]}
+              fontWeight={"700"}
+              color={"#0AA07C"}
+            >
+              O
+            </Text>
+            <Text
+              fontSize={["20px", "60px"]}
+              fontWeight={"700"}
+              color={"#0AA07C"}
+            >
+              .
+            </Text>
+            <Text
+              fontSize={["20px", "60px"]}
+              fontWeight={"700"}
+              color={"#0AA07C"}
+            >
+              .
+            </Text>
+            <Text
+              fontSize={["20px", "60px"]}
+              fontWeight={"700"}
+              color={"#0AA07C"}
+            >
+              .
+            </Text>
+            <Text
+              fontSize={["20px", "60px"]}
+              fontWeight={"700"}
+              color={"#0AA07C"}
+            >
+              .
+            </Text>
+            <Text
+              fontSize={["20px", "60px"]}
+              fontWeight={"700"}
+              color={"#0AA07C"}
+            >
+              .
+            </Text>
+          </Fade>
+        </HStack>
+      </Box>
+    );
   }
 
   return (
-    
     <SimpleGrid
       columns={{ base: 1, md: 3, lg: 3 }}
       spacing={6}
@@ -102,38 +165,37 @@ export default function Blogcardrebuild() {
       justifyContent="center"
       display="grid"
     >
+      
       {Blogdata.slice(0, 3).map((blog, index) => (
         <Card key={index}>
-          <CardBody>
-            <Image src={""} alt="BEBO" borderRadius="lg" />
-            <Stack mt="6" spacing="3">
-              <Heading size={["sm", "md"]}>
-                <SimpleGrid columns={5} w="full">
-                  <GridItem colSpan={4} w="full">
-                  <div
-                // style={{ flex: 1 }}
-                dangerouslySetInnerHTML={{
-                  __html:
-                  
-                       blog.title
-                }}
-              />
-                  </GridItem>
-                  <GridItem colSpan={1} justifyContent="end" display="flex">
-                    <MdArrowOutward />
-                  </GridItem>
-                </SimpleGrid>
-              </Heading>
-              <div
-                style={{ flex: 1 }}
-                dangerouslySetInnerHTML={{
-                  __html:
-                  
-                       blog.content
-                }}
-              />
-            </Stack>
-          </CardBody>
+          <Link href={blog.sourceUrl}>
+            <CardBody>
+              <Image src={blog.featuredImage} alt="BEBO" borderRadius="lg" />
+              <Stack mt="6" spacing="3">
+                <Heading size={["sm", "md"]}>
+                  <SimpleGrid columns={5} w="full">
+                    <GridItem colSpan={4} w="full">
+                      <div
+                        // style={{ flex: 1 }}
+                        dangerouslySetInnerHTML={{
+                          __html: blog.slug,
+                        }}
+                      />
+                    </GridItem>
+                    <GridItem colSpan={1} justifyContent="end" display="flex">
+                      <MdArrowOutward />
+                    </GridItem>
+                  </SimpleGrid>
+                </Heading>
+                {/* <Text flex={1}>
+      content=
+      {blog.content.length > 200
+        ? blog.content.slice(0, 200) + "..."
+        : blog.content}
+    </Text> */}
+              </Stack>
+            </CardBody>
+          </Link>
         </Card>
       ))}
     </SimpleGrid>
@@ -150,6 +212,7 @@ export function Blogcardrebuild2() {
     sourceUrl: any;
     title: any;
     content: any;
+    featuredImage: any;
     // add other properties as needed, e.g., image, content, etc.
   }
 
@@ -209,28 +272,35 @@ export function Blogcardrebuild2() {
           //     }
           //     triggerOnce={true}
           //   >
-          <Card key={index}>
-            <CardBody>
-              <Image src={""} alt="BEBO" borderRadius="lg" />
-              <Stack mt="6" spacing="3">
-                <Heading size={["sm", "md"]}>
-                  <SimpleGrid columns={5} w="full">
-                    <GridItem colSpan={4} w="full">
-                      <Text>{blog.title}</Text>
-                    </GridItem>
-                    <GridItem colSpan={1} justifyContent="end" display="flex">
-                      <MdArrowOutward />
-                    </GridItem>
-                  </SimpleGrid>
-                </Heading>
-                <Text flex={1}>
+          <Card key={index} size={"sm"}>
+            <Link href={blog.sourceUrl}>
+              <CardBody>
+                <Image src={blog.featuredImage} alt="BEBO" borderRadius="lg" />
+                <Stack mt="6" spacing="3">
+                  <Heading size={["sm", "md"]}>
+                    <SimpleGrid columns={5} w="full">
+                      <GridItem colSpan={4} w="full">
+                        <div
+                          // style={{ flex: 1 }}
+                          dangerouslySetInnerHTML={{
+                            __html: blog.slug,
+                          }}
+                        />
+                      </GridItem>
+                      <GridItem colSpan={1} justifyContent="end" display="flex">
+                        <MdArrowOutward />
+                      </GridItem>
+                    </SimpleGrid>
+                  </Heading>
+                  {/* <Text flex={1}>
                   content=
                   {blog.content.length > 200
                     ? blog.content.slice(0, 200) + "..."
                     : blog.content}
-                </Text>
-              </Stack>
-            </CardBody>
+                </Text> */}
+                </Stack>
+              </CardBody>
+            </Link>
           </Card>
           //   </Fade>
         ))}

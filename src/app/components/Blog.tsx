@@ -6,6 +6,7 @@ import { Fade } from "react-awesome-reveal";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Link from "next/link";
 import { AxiosGet } from "./Axios";
+import Blogcardrebuild from "./blogcardrebuild";
 export default function Blog() {
   const Ref = useRef<HTMLDivElement | null>(null);
   const inView = useInView(Ref, { once: true });
@@ -59,22 +60,11 @@ export default function Blog() {
             flexDirection={{ base: "column", lg: "row", md: "row" }}
             alignItems={"center"}
           >
-            {subblog.map((blog, index) => (
-              <GridItem colSpan={1} key={index}>
-                <Fade
-                  direction={
-                    index === 0 ? "left" : index === 1 ? "up" : "right"
-                  }
-                  triggerOnce={true}
-                >
-                  <Blogcard2
-                    src={blog.image}
-                    content={blog.content}
-                    title={blog.title}
-                  />
-                </Fade>
+           
+              <GridItem colSpan={1} >
+                <Blogcardrebuild/>
               </GridItem>
-            ))}
+         
           </SimpleGrid>
           <GridItem
             pb={["45px", "70px"]}

@@ -216,8 +216,11 @@ export default function Getblog() {
             </HStack>
           </Fade>
           <Box w={["100%", "100%"]} pb={"10px"} pt={"60px"}>
+          <Fade direction="left" triggerOnce={true}>
             <Blogcardrebuild />
+            </Fade>
           </Box>
+          
         </VStack>
       </Box>
       <SimpleGrid
@@ -230,7 +233,9 @@ export default function Getblog() {
         px={{ base: "30px", lg: "50px", md: "30px" }}
         w={"full"}
       >
+         <Fade direction="left" triggerOnce={true}>
         <Blogcardrebuild2 />
+        </Fade>
       </SimpleGrid>
 
       <Box
