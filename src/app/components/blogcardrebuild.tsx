@@ -178,7 +178,7 @@ export default function Blogcardrebuild() {
                       <div
                         // style={{ flex: 1 }}
                         dangerouslySetInnerHTML={{
-                          __html: blog.slug,
+                          __html: blog.title,
                         }}
                       />
                     </GridItem>
@@ -283,7 +283,7 @@ export function Blogcardrebuild2() {
                         <div
                           // style={{ flex: 1 }}
                           dangerouslySetInnerHTML={{
-                            __html: blog.slug,
+                            __html: blog.title,
                           }}
                         />
                       </GridItem>
