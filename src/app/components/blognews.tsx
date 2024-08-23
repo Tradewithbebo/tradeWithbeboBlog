@@ -39,7 +39,7 @@ import {
     const [Blogdata, setBlogdata] = useState<BlogItem>();
   
     const [errorMessage, setErrorMessage] = useState("");
-    setIsLoading(true);
+    // setIsLoading(true);
   
     // const [isLoading, setIsLoading] = useState(true);
     const getBlogPost = async () => {
