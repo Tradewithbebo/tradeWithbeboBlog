@@ -12,7 +12,7 @@ export default function Blog() {
   const inView = useInView(Ref, { once: true });
   const mainControls = useAnimation();
   
- 
+  const [isLoading, setIsLoading] = useState(true);
   
  
   useEffect(() => {
@@ -60,11 +60,12 @@ export default function Blog() {
             flexDirection={{ base: "column", lg: "row", md: "row" }}
             alignItems={"center"}
           >
-           
-              <GridItem colSpan={1} >
-                <Blogcardrebuild/>
-              </GridItem>
-         
+            <GridItem colSpan={1}>
+              <Blogcardrebuild
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
+              />
+            </GridItem>
           </SimpleGrid>
           <GridItem
             pb={["45px", "70px"]}
@@ -75,7 +76,13 @@ export default function Blog() {
           >
             <Fade direction="up" triggerOnce={true}>
               <Link href={"/Blog"}>
-                <Button bg={"#0CBF94"} color={"#021D17"} rounded={"20px"} size={'md'} px={'70px'}>
+                <Button
+                  bg={"#0CBF94"}
+                  color={"#021D17"}
+                  rounded={"20px"}
+                  size={"md"}
+                  px={"70px"}
+                >
                   See Blogs
                 </Button>
               </Link>

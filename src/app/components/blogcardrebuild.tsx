@@ -19,13 +19,14 @@ import { AxiosGet } from "./Axios";
 import { AttentionSeeker, Fade } from "react-awesome-reveal";
 import { FaArrowDown } from "react-icons/fa6";
 import Link from "next/link";
-export default function Blogcardrebuild() {
+export default function Blogcardrebuild({isLoading,setIsLoading}:{isLoading:any,setIsLoading:any}) {
   interface BlogItem {
     slug: string;
     sourceUrl: any;
     title: any;
     content: any;
     featuredImage: any;
+    _id:any
     // add other properties as needed, e.g., image, content, etc.
   }
 
@@ -35,7 +36,7 @@ export default function Blogcardrebuild() {
 
   const [errorMessage, setErrorMessage] = useState("");
 
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   const getBlogPost = async () => {
     setIsLoading(true);
@@ -51,7 +52,7 @@ export default function Blogcardrebuild() {
         // });
 
         setBlogdata(items);
-        console.log("Blog Items:", items);
+        // console.log("Blog Items:", items);
 
         setErrorMessage(""); // Clear error message on success
         return true;
@@ -168,7 +169,7 @@ export default function Blogcardrebuild() {
       
       {Blogdata.slice(0, 3).map((blog, index) => (
         <Card key={index}>
-          <Link href={blog.sourceUrl}>
+          <Link href={`/Blognew/${blog._id}`}>
             <CardBody>
               <Image src={blog.featuredImage} alt="BEBO" borderRadius="lg" />
               <Stack mt="6" spacing="3">
@@ -213,6 +214,7 @@ export function Blogcardrebuild2() {
     title: any;
     content: any;
     featuredImage: any;
+    _id:any
     // add other properties as needed, e.g., image, content, etc.
   }
 
@@ -238,7 +240,7 @@ export function Blogcardrebuild2() {
         // });
 
         setBlogdata(items);
-        console.log("Blog Items:", items);
+        // console.log("Blog Items:", items);
 
         setErrorMessage(""); // Clear error message on success
         return true;
@@ -273,7 +275,7 @@ export function Blogcardrebuild2() {
           //     triggerOnce={true}
           //   >
           <Card key={index} size={"sm"}>
-            <Link href={blog.sourceUrl}>
+            <Link href={`/Blognew/${blog._id}`}>
               <CardBody>
                 <Image src={blog.featuredImage} alt="BEBO" borderRadius="lg" />
                 <Stack mt="6" spacing="3">
