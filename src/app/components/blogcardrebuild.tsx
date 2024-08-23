@@ -31,7 +31,7 @@ export default function Blogcardrebuild({isLoading,setIsLoading}:{isLoading:any,
   }
 
   const url = "blog";
-  setIsLoading(true);
+  // setIsLoading(true);
 
   const [Blogdata, setBlogdata] = useState<BlogItem[]>([]);
 
@@ -40,7 +40,7 @@ export default function Blogcardrebuild({isLoading,setIsLoading}:{isLoading:any,
   // const [isLoading, setIsLoading] = useState(true);
 
   const getBlogPost = async () => {
-    setIsLoading(true);
+    // setIsLoading(true);
     try {
       const res = await AxiosGet(url);
       setIsLoading(false); // Set loading state to false after the request is complete
