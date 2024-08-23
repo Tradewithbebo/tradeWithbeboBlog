@@ -31,6 +31,7 @@ export default function Blogcardrebuild({isLoading,setIsLoading}:{isLoading:any,
   }
 
   const url = "blog";
+  setIsLoading(true);
 
   const [Blogdata, setBlogdata] = useState<BlogItem[]>([]);
 

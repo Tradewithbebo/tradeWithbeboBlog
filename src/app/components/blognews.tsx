@@ -32,7 +32,6 @@ import {
       title: any;
       content: any;
       featuredImage: any;
-      // add other properties as needed, e.g., image, content, etc.
     }
   
     const url = "blog";
@@ -40,6 +39,7 @@ import {
     const [Blogdata, setBlogdata] = useState<BlogItem>();
   
     const [errorMessage, setErrorMessage] = useState("");
+    setIsLoading(true);
   
     // const [isLoading, setIsLoading] = useState(true);
     const getBlogPost = async () => {
