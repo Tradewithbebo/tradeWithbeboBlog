@@ -225,6 +225,7 @@ import {
                     mb={2}
                     w={"fit-content"}
                     textAlign="center"
+                    fontSize={{ base: "sm", md: "md",lg:'md' }}
                   >
                     {tag}
                   </Text>
@@ -250,7 +251,7 @@ import {
                 // p={"5px"}
                 fontSize={"15px"}
                 fontWeight={"400"}
-                bg="gray.50"
+                // bg="gray.50"
                 color={'grey'}
                 
               >
@@ -260,7 +261,7 @@ import {
                 pb={"10px"}
                 fontSize={"15px"}
                 fontWeight={"400"}
-                bg="gray.50"
+                // bg="gray.50"
                 color={'grey'}
                 // boxShadow="md"
                 dangerouslySetInnerHTML={{
