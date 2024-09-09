@@ -12,13 +12,14 @@ import {
   Box,
   GridItem,
   Button,
+  Link,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { AxiosGet } from "./Axios";
 import { AttentionSeeker, Fade } from "react-awesome-reveal";
 import { FaArrowDown } from "react-icons/fa6";
-import Link from "next/link";
+// import Link from "next/link";
 export default function Blogcardrebuild({isLoading,setIsLoading}:{isLoading:any,setIsLoading:any}) {
   interface BlogItem {
     slug: string;
@@ -26,10 +27,19 @@ export default function Blogcardrebuild({isLoading,setIsLoading}:{isLoading:any,
     title: any;
     content: any;
     featuredImage: any;
-    _id:any
+    _id:any;
+    updatedAt: any
     // add other properties as needed, e.g., image, content, etc.
   }
-
+  const formatDate = (dateString:any) => {
+    const date = new Date(dateString);
+    const formatter = new Intl.DateTimeFormat('en-GB', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
+    return formatter.format(date);
+  };
   const url = "blog";
   // setIsLoading(true);
 
@@ -167,23 +177,84 @@ export default function Blogcardrebuild({isLoading,setIsLoading}:{isLoading:any,
       justifyContent="center"
       display="grid"
     >
-      
       {Blogdata.slice(0, 3).map((blog, index) => (
         <Card key={index}>
-          <Link href={`/Blognew/${blog._id}`}>
+          <Link href={`/Blognew/${blog.slug}` }
+          _hover={{
+                          
+                          textDecoration: "none",
+                         
+                        }}
+          >
             <CardBody>
-              <Image src={blog.featuredImage} alt="BEBO" borderRadius="lg" />
+              <Image
+                src={blog.featuredImage}
+                alt="BEBO"
+                borderRadius="lg"
+                h={{
+                  base: "300px",
+                  sm: "300px",
+                  md: "300px",
+                  lg: "300px",
+                  xl: "60px",
+                }}
+                width={{
+                  base: "100%",
+                  sm: "100%",
+                  md: "100%",
+                  lg: "100%",
+                  xl: "60%",
+                }}
+              />
               <Stack mt="6" spacing="3">
                 <Heading size={["sm", "md"]}>
                   <SimpleGrid columns={5} w="full">
                     <GridItem colSpan={4} w="full">
-                      <div
-                        // style={{ flex: 1 }}
-                        dangerouslySetInnerHTML={{
-                          __html: blog.title,
-                        }}
-                      />
+                      <HStack>
+                        <Box
+
+                        mb={'5px'}
+                          p={"5px"}
+                          fontSize={"15px"}
+                          fontWeight={"400"}
+                          bg="gray.50"
+                          borderRadius="md"
+                          borderWidth={1}
+                          borderColor="gray.200"
+                        
+                        >
+                          Last Updated
+                        </Box>
+                        <Box
+                          pb={"10px"}
+                          fontSize={"15px"}
+                          fontWeight={"400"}
+                          bg="gray.50"
+                          // boxShadow="md"
+                          dangerouslySetInnerHTML={{
+                            __html: formatDate(blog.updatedAt),
+                          }}
+                        />
+                      </HStack>
                     </GridItem>
+                    <GridItem colSpan={4} w="full">
+                      <Link
+                        _hover={{
+                          color: "slateblue",
+                          textDecoration: "underline",
+                          textDecorationColor: "#7c3aed", // Changes the color of the underline
+                          textDecorationThickness: "2px",
+                        }}
+                      >
+                        <div
+                          // style={{ flex: 1 }}
+                          dangerouslySetInnerHTML={{
+                            __html: blog.title,
+                          }}
+                        />
+                      </Link>
+                    </GridItem>
+
                     <GridItem colSpan={1} justifyContent="end" display="flex">
                       <MdArrowOutward />
                     </GridItem>
@@ -209,13 +280,23 @@ export function Blogcardrebuild2() {
   const handleLoadMore = () => {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + ITEMS_PER_PAGE);
   };
+  const formatDate = (dateString:any) => {
+    const date = new Date(dateString);
+    const formatter = new Intl.DateTimeFormat('en-GB', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    });
+    return formatter.format(date);
+  };
   interface BlogItem {
     slug: string;
     sourceUrl: any;
     title: any;
     content: any;
     featuredImage: any;
-    _id:any
+    _id:any;
+    updatedAt:any
     // add other properties as needed, e.g., image, content, etc.
   }
 
@@ -275,37 +356,98 @@ export function Blogcardrebuild2() {
           //     }
           //     triggerOnce={true}
           //   >
-          <Card key={index} size={"sm"}>
-            <Link href={`/Blognew/${blog._id}`}>
-              <CardBody>
-                <Image src={blog.featuredImage} alt="BEBO" borderRadius="lg" />
-                <Stack mt="6" spacing="3">
-                  <Heading size={["sm", "md"]}>
-                    <SimpleGrid columns={5} w="full">
-                      <GridItem colSpan={4} w="full">
+          <Card key={index}>
+          <Link href={`/Blognew/${blog.slug}` }
+          _hover={{
+                          
+                          textDecoration: "none",
+                         
+                        }}
+          >
+            <CardBody>
+              <Image
+                src={blog.featuredImage}
+                alt="BEBO"
+                borderRadius="lg"
+                h={{
+                  base: "300px",
+                  sm: "300px",
+                  md: "300px",
+                  lg: "300px",
+                  xl: "60px",
+                }}
+                width={{
+                  base: "100%",
+                  sm: "100%",
+                  md: "100%",
+                  lg: "100%",
+                  xl: "60%",
+                }}
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size={["sm", "md"]}>
+                  <SimpleGrid columns={5} w="full">
+                    <GridItem colSpan={4} w="full">
+                      <HStack>
+                        <Box
+
+                        mb={'5px'}
+                          p={"5px"}
+                          fontSize={"15px"}
+                          fontWeight={"400"}
+                          bg="gray.50"
+                          borderRadius="md"
+                          borderWidth={1}
+                          borderColor="gray.200"
+                        
+                        >
+                          Last Updated
+                        </Box>
+                        <Box
+                          pb={"10px"}
+                          fontSize={"15px"}
+                          fontWeight={"400"}
+                          bg="gray.50"
+                          // boxShadow="md"
+                          dangerouslySetInnerHTML={{
+                            __html: formatDate(blog.updatedAt),
+                          }}
+                        />
+                      </HStack>
+                    </GridItem>
+                    <GridItem colSpan={4} w="full">
+                      <Link
+                        _hover={{
+                          color: "slateblue",
+                          textDecoration: "underline",
+                          textDecorationColor: "#7c3aed", // Changes the color of the underline
+                          textDecorationThickness: "2px",
+                        }}
+                      >
                         <div
                           // style={{ flex: 1 }}
                           dangerouslySetInnerHTML={{
                             __html: blog.title,
                           }}
                         />
-                      </GridItem>
-                      <GridItem colSpan={1} justifyContent="end" display="flex">
-                        <MdArrowOutward />
-                      </GridItem>
-                    </SimpleGrid>
-                  </Heading>
-                  {/* <Text flex={1}>
-                  content=
-                  {blog.content.length > 200
-                    ? blog.content.slice(0, 200) + "..."
-                    : blog.content}
-                </Text> */}
-                </Stack>
-              </CardBody>
-            </Link>
-          </Card>
-          //   </Fade>
+                      </Link>
+                    </GridItem>
+
+                    <GridItem colSpan={1} justifyContent="end" display="flex">
+                      <MdArrowOutward />
+                    </GridItem>
+                  </SimpleGrid>
+                </Heading>
+                {/* <Text flex={1}>
+      content=
+      {blog.content.length > 200
+        ? blog.content.slice(0, 200) + "..."
+        : blog.content}
+    </Text> */}
+              </Stack>
+            </CardBody>
+          </Link>
+        </Card>
         ))}
       </SimpleGrid>
       <Box>
