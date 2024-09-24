@@ -182,95 +182,78 @@ import {
   
     return (
       <>
-        <SimpleGrid // 1 column on small, 2 on medium, 3 on large
-          justifyContent={"center"}
-          gap={{ base: "14px", md: "14px", lg: "20px" }} // consistent gap, more space on larger screens
-          alignItems={"center"}
-          px={{ base: "10px", md: "30px", lg: "50px" }} // padding adjustments for responsiveness
-          w={"full"}
-          // py={{ base: "20px", md: "40px", lg: "50px" }} // top and bottom padding
-        >
-          <GridItem w="full" display="flex" justifyContent="center">
-            <Heading size={["sm", "md", "lg"]} textAlign="center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: Blogdata?.title,
-                }}
-              />
-            </Heading>
-          </GridItem>
+       <SimpleGrid
+  columns={{ base: 1, md: 2, lg: 3 }} // responsive column layout
+  justifyContent="center"
+  gap={{ base: "14px", md: "14px", lg: "20px" }} // consistent gap across screen sizes
+  alignItems="center"
+  px={{ base: "10px", md: "30px", lg: "50px" }} // responsive padding
+  w="full"
+>
+  <GridItem w="full" display="flex" justifyContent="center">
+    <Heading size={{ base: "sm", md: "md", lg: "lg" }} textAlign="center">
+      <div
+        dangerouslySetInnerHTML={{
+          __html: Blogdata?.title,
+        }}
+      />
+    </Heading>
+  </GridItem>
 
-          <GridItem w="full" display="flex" justifyContent="center">
-            <Image
-              src={Blogdata?.featuredImage}
-              alt="BEBO"
-              borderRadius="lg"
-              width={
-                ["90%", "80%", "60%"] // limit size on larger screens
-              }
-              maxH="auto" // optional max height
-              objectFit="cover"
-            />
-          </GridItem>
+  <GridItem w="full" display="flex" justifyContent="center">
+    <Image
+      src={Blogdata?.featuredImage}
+      alt="BEBO"
+      borderRadius="lg"
+      width={{ base: "90%", md: "80%", lg: "60%" }} // responsive width
+      maxH="auto"
+      objectFit="cover"
+    />
+  </GridItem>
 
-          <GridItem w="full">
-            <HStack wrap="wrap" justifyContent="center">
-              {Blogdata?.tags && Blogdata.tags.length > 0 ? (
-                Blogdata.tags.map((tag, index) => (
-                  <Text
-                    key={index}
-                    p={2}
-                    bg="gray.100"
-                    borderRadius="md"
-                    mb={2}
-                    w={"fit-content"}
-                    textAlign="center"
-                    fontSize={{ base: "sm", md: "md",lg:'md' }}
-                  >
-                    {tag}
-                  </Text>
-                ))
-              ) : (
-                <Text>No tags available</Text>
-              )}
-            </HStack>
-          </GridItem>
+  <GridItem w="full">
+    <HStack wrap="wrap" justifyContent="center">
+      {Blogdata?.tags && Blogdata.tags.length > 0 ? (
+        Blogdata.tags.map((tag, index) => (
+          <Text
+            key={index}
+            p={2}
+            bg="gray.100"
+            borderRadius="md"
+            mb={2}
+            w="fit-content"
+            textAlign="center"
+            fontSize={{ base: "sm", md: "md", lg: "md" }} // responsive font size
+          >
+            {tag}
+          </Text>
+        ))
+      ) : (
+        <Text>No tags available</Text>
+      )}
+    </HStack>
+  </GridItem>
 
-          <GridItem w="full" px={{ base: "10px", md: "20px" }}>
-            <div
-              className="blog"
-              dangerouslySetInnerHTML={{
-                __html: Blogdata?.content,
-              }}
-            />
-          </GridItem>
-          <GridItem w="full" px={{ base: "10px", md: "20px" }} mt={'20px'}>
-            <HStack gap={'1px'}>
-              <Box
-                mb={"10px"}
-                // p={"5px"}
-                fontSize={"15px"}
-                fontWeight={"400"}
-                // bg="gray.50"
-                color={'grey'}
-                
-              >
-                Last modified on
-              </Box>
-              <Box
-                pb={"10px"}
-                fontSize={"15px"}
-                fontWeight={"400"}
-                // bg="gray.50"
-                color={'grey'}
-                // boxShadow="md"
-                dangerouslySetInnerHTML={{
-                  __html: formatDate(Blogdata?.updatedAt),
-                }}
-              />
-            </HStack>
-          </GridItem>
-        </SimpleGrid>
+  <GridItem w="full" px={{ base: "10px", md: "20px" }}>
+    <div
+      className="blog"
+      dangerouslySetInnerHTML={{
+        __html: Blogdata?.content,
+      }}
+    />
+  </GridItem>
+
+  <GridItem w="full" px={{ base: "10px", md: "20px" }} mt="20px">
+    <HStack gap="1px">
+      <Box mb="10px" fontSize="15px" fontWeight="400" color="grey">
+        Last modified on
+      </Box>
+      <Box pb="10px" fontSize="15px" fontWeight="400" color="grey" dangerouslySetInnerHTML={{ __html: formatDate(Blogdata?.updatedAt) }} />
+    </HStack>
+  </GridItem>
+</SimpleGrid>
+
+      
       </>
     );
   }
