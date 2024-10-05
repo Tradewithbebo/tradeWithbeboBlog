@@ -19,6 +19,7 @@ import { MdArrowOutward } from "react-icons/md";
 import { AxiosGet } from "./Axios";
 import { AttentionSeeker, Fade } from "react-awesome-reveal";
 import { FaArrowDown } from "react-icons/fa6";
+import { motion } from "framer-motion";
 // import Link from "next/link";
 
 export default function Blogcardrebuild({ isLoading, setIsLoading }: { isLoading: any, setIsLoading: any }) {
@@ -279,6 +280,30 @@ export function Blogcardrebuild2() {
           </Card>
         ))}
       </SimpleGrid>
+      {visibleItems < Blogdata.length && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+        <Box w={'full'} display={'flex'} justifyContent={'center'}>
+        <Button
+            onClick={handleLoadMore}
+            mt={6}
+            colorScheme="#0CBF94"
+            variant="solid"
+            size={["sm", "md"]}
+                bg={"#0CBF94"}
+                rounded={"20px"}
+                color={'black'}
+            width="10%"
+            _hover={{ bg: "#0CBF94" }}
+          >
+            Load More
+          </Button>
+        </Box>
+        </motion.div>
+      )}
     </>
   );
 }
