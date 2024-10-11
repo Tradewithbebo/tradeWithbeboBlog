@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = 'https://beboapi.onrender.com/' 
+const baseUrl = 'http://157.230.179.244/' 
 
 export async function AxiosPost(url: string, dataObject: any) {
     try {
