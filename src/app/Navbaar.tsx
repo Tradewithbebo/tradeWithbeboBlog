@@ -28,7 +28,7 @@ export default function Navbaar({
       >
         <Box py={"15px"} px={"80px"} w={"full"}>
           <HStack w={"full"} display={"flex"} justifyContent={"space-between"}>
-            <HStack gap={"32px"}>
+           <HStack gap={"32px"}><Link href={"/"} > 
               <HStack gap={"5px"}>
                 <Image
                   height="15px"
@@ -40,7 +40,9 @@ export default function Navbaar({
                 <Box height="13px" width="39px">
                   <Image src="/image/Bebo.png" alt="Bebo" />
                 </Box>
-              </HStack>
+              
+              </HStack> 
+              </Link>
               <Box>
                 <Link href={"https://wa.me/message/DMLINAXCGNQYP1"}>
                   <Text

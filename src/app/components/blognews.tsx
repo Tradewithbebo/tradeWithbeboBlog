@@ -183,10 +183,10 @@ import {
     return (
       <>
        <SimpleGrid
-  columns={{ base: 1, md: 2, lg: 3 }} // responsive column layout
+  columns={{ base: 1}} // responsive column layout
   justifyContent="center"
   gap={{ base: "14px", md: "14px", lg: "20px" }} // consistent gap across screen sizes
-  alignItems="center"
+  // alignItems="center"
   px={{ base: "10px", md: "30px", lg: "50px" }} // responsive padding
   w="full"
 >
