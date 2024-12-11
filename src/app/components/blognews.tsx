@@ -245,8 +245,8 @@ import {
 
   <GridItem w="full" px={{ base: "10px", md: "20px" }} mt="20px">
     <HStack gap="1px">
-      <Box mb="10px" fontSize="15px" fontWeight="400" color="grey">
-        Last modified on
+      <Box mb="10px" fontSize="15px" fontWeight="400" color="grey" pr={'2px'}>
+        Last modified       
       </Box>
       <Box pb="10px" fontSize="15px" fontWeight="400" color="grey" dangerouslySetInnerHTML={{ __html: formatDate(Blogdata?.updatedAt) }} />
     </HStack>
